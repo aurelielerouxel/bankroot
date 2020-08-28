@@ -9,7 +9,7 @@ main.appendChild(layer);
 let buttonWarningLayer = document.createElement("button");
 main.appendChild(buttonWarningLayer);
 
-// get layer's text with AJAX request
+// AJAX request
 let httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
