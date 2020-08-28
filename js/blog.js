@@ -1,6 +1,6 @@
 
 // objet de base pour gérer les requêtes et les réponses
- httpRequest = new XMLHttpRequest();
+httpRequest = new XMLHttpRequest();
 
 // code à exécuter
 httpRequest.onreadystatechange = function() {
@@ -10,11 +10,23 @@ httpRequest.onreadystatechange = function() {
                 // la réponse est exploitable et valide
                 // on affiche la réponse sur la page
                 let articles = JSON.parse(httpRequest.responseText);
-                console.log(articles);
-
-
-                for (const property in articles) {
-
+                
+                                       
+                // for (let article = 0; article in articles; article++){
+                //    console.log(articles)
+                    
+                for (let article in articles[0]) {
+                    let main = document.getElementById("main");
+                    let section = document.createElement("section");
+                    section.appendChild(main);
+                    let titre = document.createElement("titre");
+                    titre.appendChild(section);
+                    let id = document.createElement("id");
+                    id.appendChild(section);
+                    let contenu = document.createElement("contenu");
+                    contenu.appendChild(section);
+                    articles.innerText = article;
+                    console.log(article);
                 }
 
             } 
