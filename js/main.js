@@ -1,4 +1,4 @@
-// Création du layer
+// creation of the layer
 let main = document.getElementsByTagName("main")[0];
 let background = document.getElementById("background");
 let layer = document.getElementById("layer");
@@ -17,10 +17,21 @@ httpRequest.onreadystatechange = function() {
 
         if(httpRequest.status === 200){
 
+            //  store the json file in a variable
             layer.innerText = httpRequest.responseText;
         }
+        else {
+            // there was a problem with the request,
+            console.log("une erreur est survenue");
+        }
+    } 
+    else {
+        // not ready yet,
+        console.log("en attente de réponse");
     }
 }
+
+// opening and sending of the request,
 httpRequest.open("GET", "warning.txt", true);
 httpRequest.send();
 
