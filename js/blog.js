@@ -10,35 +10,39 @@ httpRequest.onreadystatechange = function() {
             let blog = JSON.parse(httpRequest.responseText);
             console.log(blog);
        
-            // create a loop each object of the json
-            for (let i of blog) {
-                let article = document.createElement("section");
+            // create a loop for each object of the json
+            for (let article of blog) {
+                let section = document.createElement("section");
                 // mais WTF
-                card.appendChild(article);
+                card.appendChild(section);
                 // card.style.
 
                 let id = document.createElement("id");
-                id.innerText = i.id;
+                id.innerText = article.id;
                 card.appendChild(id);
                 // id.style.
 
                 let titre = document.createElement("titre");           
-                titre.innerText = i.titre;
+                titre.innerText = article.titre;
                 // cardTitle.style.
 
                 let contenu = document.createElement("p");    
-                contenu.innerText = i.contenu;
+                contenu.innerText = article.contenu;
                 // cardContent.style.
 
-                id.appendChild(titre);
-                id.appendChild(contenu);
+                // let button = document.createElement("a");
+                
+                section.appendChild(id);
+                section.appendChild(titre);
+                section.appendChild(contenu);
             }
-                                   
+
         } 
          else {
             // there was a problem with the request,
             console.log("ERROR");
          }
+
      } 
     else {
         // not ready yet,
