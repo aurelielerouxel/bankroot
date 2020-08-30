@@ -1,47 +1,50 @@
+let card = document.getElementById("card");
+// AJAX request
+let httpRequest = new XMLHttpRequest();
 
-// objet de base pour gérer les requêtes et les réponses
-httpRequest = new XMLHttpRequest();
-
-// code à exécuter
 httpRequest.onreadystatechange = function() {
-        // tout va bien, la réponse a été reçue
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                // la réponse est exploitable et valide
-                // on affiche la réponse sur la page
-                let articles = JSON.parse(httpRequest.responseText);
-                
-                                       
-                // for (let article = 0; article in articles; article++){
-                //    console.log(articles)
-                    
-                for (let article in articles[0]) {
-                    let main = document.getElementById("main");
-                    let section = document.createElement("section");
-                    section.appendChild(main);
-                    let titre = document.createElement("titre");
-                    titre.appendChild(section);
-                    let id = document.createElement("id");
-                    id.appendChild(section);
-                    let contenu = document.createElement("contenu");
-                    contenu.appendChild(section);
-                    articles.innerText = article;
-                    console.log(article);
-                }
 
-            } 
-            else {
-                // il y a eu un problème avec la requête,
-                console.log("une erreur est survenue");
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+         if (httpRequest.status === 200) {
+            //  Store the json file in a variable
+            let blog = JSON.parse(httpRequest.responseText);
+            console.log(blog);
+       
+            // create a loop each object of the json
+            for (let i of blog) {
+                let article = document.createElement("section");
+                // mais WTF
+                card.appendChild(article);
+                // card.style.
+
+                let id = document.createElement("id");
+                id.innerText = i.id;
+                card.appendChild(id);
+                // id.style.
+
+                let titre = document.createElement("titre");           
+                titre.innerText = i.titre;
+                // cardTitle.style.
+
+                let contenu = document.createElement("p");    
+                contenu.innerText = i.contenu;
+                // cardContent.style.
+
+                id.appendChild(titre);
+                id.appendChild(contenu);
             }
+                                   
         } 
-        else {
-            // pas encore prête
-            console.log("en attente de réponse");
-        }
-    };
-    // ouverture et envoi de la requête
-    // httpRequest.open('GET', 'blog.json', true);
-    httpRequest.open('GET', 'https://oc-jswebsrv.herokuapp.com/api/articles', true);
-    // httpRequest.open('GET', 'https://swapi.dev/api/people/1', true);
-    httpRequest.send();
+         else {
+            // there was a problem with the request,
+            console.log("ERROR");
+         }
+     } 
+    else {
+        // not ready yet,
+        console.log("chargement en cours");
+    }
+};
+// opening and sending of the request,
+httpRequest.open('GET', 'https://oc-jswebsrv.herokuapp.com/api/articles', true);
+httpRequest.send();
