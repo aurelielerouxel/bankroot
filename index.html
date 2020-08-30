@@ -21,33 +21,42 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <!-- <meta name="theme-color" content="#fafafa"> -->
 </head>
 
 <body>
 
-  <header class="jumbotron jumbotron-fluid">
+  <header class="jumbotron-fluid bg-info py-3">
     <section class="container">
-      <h1 class="display-3">Bank Root</h1>
+      <h1 class="display-3 mt-0">Bank Root</h1>
       <p class="lead">La première banque au monde où vos investissements ne vous rapporteront rien.</p>
     </section>
   </header>
 
-  <nav class="nav">
-    <a class="nav-link active" href="index.html">Mes comptes</a>
-    <a class="nav-link" href="transferts.html">Transferts</a>
-    <a class="nav-link" href="infos.html">Informations</a>
-    <a class="nav-link" href="blog.html">Blog</a>
-    <a class="nav-link" href="compte.html">Créer un compte</a>
+  <nav class="nav p-3 " style="justify-content: space-around;">
+    <a class="nav-link active" style="border-radius: 25px; font-size: 1.5em;" href="index.html">Accueil</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="transferts.html">Transferts</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="infos.html">Informations</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="blog.html">Blog</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="compte.html">Créer un compte</a>
+    <div class="my-3">
+      <form action="" method="POST">
+        <input type="text">
+      </form>
+      <button onclick="submit()">Rechercher</button>
+    </div>
   </nav>
 
   <main class="container">
+
     <!-- Écran d'alerte message -->
     <div id="background">
       <article id="layer"></article>
     </div>
+
     <!-- Message d'alerte -->
-    <!-- <section class="alert alert-warning alert-dismissible fade show" role="alert">
+    
+    <section class="alert alert-warning alert-dismissible" role="alert">
       <h4 class="alert-heading">WARNING</h4>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.</p>
       <hr>
@@ -55,39 +64,75 @@
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-    </section> -->
-
+    </section>
+    
     <!-- comptes bancaires -->
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Compte 1</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Crédits : 1000 €</p>
-        <a href="#" class="card-link">Dépot</a>
-        <a href="#" class="card-link">Retrait</a>
-      </div>
+    <div class="row" style="justify-content: space-between;">
+      <article class="card p-3 m-3 col-sm-8 col-md-5 col-lg-4 text-center" style="">
+        <img src="tile-wide.png" class="card-img-top" alt="...">
+        <section class="card-body">
+          <h5 class="card-title">Compte courant</h5>
+          <p class="card-text">2543 €</p>
+          <a href="#" class="btn btn-primary">Virement</a>
+          <a href="#" class="btn btn-primary">Opérations</a>
+        </section>
+      </article>
+
+      <article class="card p-3 m-3 col-sm-8 col-md-5 col-lg-4 text-center" style="">
+        <img src="tile-wide.png" class="card-img-top" alt="...">
+        <section class="card-body">
+          <h5 class="card-title">Compte joint</h5>
+          <p class="card-text">743,35 €</p>
+          <a href="#" class="btn btn-primary">Virement</a>
+          <a href="#" class="btn btn-primary">Opérations</a>
+        </section>
+      </article>
+    
+      <article class="card p-3 m-3 col-sm-8 col-md-5 col-lg-4 text-center" style="">
+        <img src="tile-wide.png" class="card-img-top" alt="...">
+        <section class="card-body">
+          <h5 class="card-title">Compte à terme</h5>
+          <p class="card-text">5897,36 €</p>
+          <a href="#" class="btn btn-primary">Virement</a>
+          <a href="#" class="btn btn-primary">Opérations</a>
+        </section>
+      </article>
+
+      <article class="card p-3 m-3 col-sm-8 col-md-5 col-lg-4 text-center" style="">
+        <img src="tile-wide.png" class="card-img-top" alt="...">
+        <section class="card-body">
+          <h5 class="card-title">Livret A</h5>
+          <p class="card-text">2789,46 €</p>
+          <a href="#" class="btn btn-primary">Virement</a>
+          <a href="#" class="btn btn-primary">Opérations</a>
+        </section>
+      </article>
+
+      <article class="card p-3 m-3 col-sm-8 col-md-5 col-lg-4 text-center" style="">
+        <img src="tile-wide.png" class="card-img-top" alt="...">
+        <section class="card-body">
+          <h5 class="card-title">LEP</h5>
+          <p class="card-text">144,45 €</p>
+          <a href="#" class="btn btn-primary">Virement</a>
+          <a href="#" class="btn btn-primary">Opérations</a>
+        </section>
+      </article>
+
+      <article class="card p-3 m-3 col-sm-8 col-md-5 col-lg-4 text-center" style="">
+        <img src="tile-wide.png" class="card-img-top" alt="...">
+        <section class="card-body">
+          <h5 class="card-title">PERP</h5>
+          <p class="card-text">544,55 €</p>
+          <a href="#" class="btn btn-primary">Virement</a>
+          <a href="#" class="btn btn-primary">Opérations</a>
+        </section>
+      </article>
+
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Compte 2</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Crédits : 1000 €</p>
-        <a href="#" class="card-link">Dépot</a>
-        <a href="#" class="card-link">Retrait</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Compte 3</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Crédits : 1000 €</p>
-        <a href="#" class="card-link">Dépot</a>
-        <a href="#" class="card-link">Retrait</a>
-      </div>
-    </div>
+
   </main>
 
-  <footer class="jumbotron jumbotron-fluid">
+  <footer class="jumbotron jumbotron-fluid bg-info p-1 m-0">
     <section class="container">
       <h5 class="display-5">Tous droits réservés.</h5>
       <p>okALme.com</p>

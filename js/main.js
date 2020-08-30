@@ -1,11 +1,13 @@
 // creation of the layer
 let main = document.getElementsByTagName("main")[0];
-let background = document.getElementById("background");
+let background = document.getElementById("background")[0];
 let layer = document.getElementById("layer");
 
-layer.setAttribute("background", "id", "layer");
+// 
+layer.setAttribute("layer", "background");
 main.appendChild(layer);
 
+// button creation
 let buttonWarningLayer = document.createElement("button");
 main.appendChild(buttonWarningLayer);
 
@@ -62,8 +64,8 @@ layer.style.color = "white";
 buttonWarningLayer.innerText = "J'accepte les conditions d'utilisation.";
 buttonWarningLayer.style.padding = "1em";
 buttonWarningLayer.style.borderRadius = "25px";
-buttonWarningLayer.style.position = "relative";
-buttonWarningLayer.style.top= "90%";
-buttonWarningLayer.style.left = "25%";
+buttonWarningLayer.style.position = "absolute";
+buttonWarningLayer.style.top= "10%";
+buttonWarningLayer.style.right = "10%";
 buttonWarningLayer.style.backgroundColor = "black";
 buttonWarningLayer.style.color = "white";

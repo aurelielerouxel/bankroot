@@ -12,6 +12,7 @@
   <!-- <meta property="og:url" content=""> -->
   <!-- <meta property="og:image" content=""> -->
 
+  <link rel="icon" href="img/money.png" type="image/x-icon">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -24,30 +25,39 @@
 
 <body>
 
-  <header class="jumbotron jumbotron-fluid">
+  <header class="jumbotron-fluid bg-info py-3">
     <section class="container">
-      <h1 class="display-3">Bank Root</h1>
+      <h1 class="display-3 mt-0">Bank Root</h1>
       <p class="lead">La première banque au monde où vos investissements ne vous rapporteront rien.</p>
     </section>
   </header>
 
-  <nav class="nav">
-    <a class="nav-link active" href="index.html">Mes comptes</a>
-    <a class="nav-link" href="transferts.html">Transferts</a>
-    <a class="nav-link" href="infos.html">Informations</a>
-    <a class="nav-link" href="blog.html">Blog</a>
-    <a class="nav-link" href="compte.html">Créer un compte</a>
+  <nav class="nav p-3 " style="justify-content: space-around;">
+    <a class="nav-link active" style="border-radius: 25px; font-size: 1.5em;" href="index.html">Accueil</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="transferts.html">Transferts</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="infos.html">Informations</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="blog.html">Blog</a>
+    <a class="nav-link" style="border-radius: 25px; font-size: 1.5em;" href="compte.html">Créer un compte</a>
+    <div class="my-3">
+      <form action="" method="POST">
+        <input type="text">
+      </form>
+      <button onclick="submit()">Rechercher</button>
+    </div>
   </nav>
 
-  <main id="ma" class="container">
+  <main class="container">
+    <div id="card" style="width: 18rem;">
       <section class="card-body">
-        <!-- <h5 class="titre">Titre</h5> -->
-        <!-- <h6 class="id mb-2 text-muted">ID</h6> -->
-        <!-- <p class="contenu">Contenu</p> -->
+        <h6 class="card-subtitle mb-2 text-muted">id</h6>
+        <h5 class="card-title">titre</h5>
+        <p class="card-text">contenu</p>
+        <a href="#" class="card-link">Lire</a>
       </section>
+    </div>
   </main>
 
-  <footer class="jumbotron jumbotron-fluid">
+  <footer class="jumbotron jumbotron-fluid bg-info p-1 m-0">
     <section class="container">
       <h5 class="display-5">Tous droits réservés.</h5>
       <p>okALme.com</p>
